@@ -3,7 +3,7 @@
     grid-template-columns: 75% 25%;
 }
 aside{
-padding-left: 20px;
+padding-left: 30px !important;
 }
 .post-list{
     list-style-type: "-";
@@ -37,6 +37,6 @@ aside hr{
         grid-template-columns: 100%;
     }
     aside{
-        padding-left: 0px;
+        padding-left: 30px!important;
     }
 }

@@ -48,7 +48,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
                                     </Link>
                                 </div>
                                 <div className="site-nav-right">
-                                 <NavSlide/>
+                                 <NavSlide home={isHome}/>
                                 <ul className={` ${isHome?"menu":"menu-light"}`}>
                                     <li>
                                     <a onClick={()=>setShop(!Shop)}>Shop <FontAwesomeIcon icon={faChevronDown} /></a>
@@ -227,7 +227,7 @@ return(
 function noScroll() {
     window.scrollTo(0, 0);
   }
-const NavSlide=()=>{
+const NavSlide=({home})=>{
     const [mobileMenu,setMobileMenu]=useState(false);
     const [menuDropM,setmenuDropM]=useState({girls:false,boys:false});
     useEffect(() => {
@@ -239,8 +239,8 @@ const NavSlide=()=>{
     }, [mobileMenu])
     return(
         <>
-        <div className="menu-burger" onClick={()=>setMobileMenu(!mobileMenu)}>
-            <FontAwesomeIcon icon={faBars} />
+        <div className="menu-burger"  onClick={()=>setMobileMenu(!mobileMenu)}>
+            <FontAwesomeIcon icon={faBars} style={home?{color:"white"}:{color:"#333"}} />
         </div>  
         <div className="mobile-menu mobile" style={mobileMenu?{left:"0px"}:{left:"-95vw"}}>
                         <div class="mobile-nav-icon btn-cont">
