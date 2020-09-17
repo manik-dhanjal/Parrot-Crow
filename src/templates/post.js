@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql,Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-
+import "../styles/post.style.css"
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-
+import Url from "url"
 /**
 * Single post view (/:slug)
 *
@@ -14,7 +14,8 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.shopifyArticle
-
+    const Rpost= data.allShopifyArticle.nodes
+    console.log(Rpost)
     return (
         <>
             <MetaData
@@ -26,15 +27,15 @@ const Post = ({ data, location }) => {
                 {/* <style type="text/css">{`${post.codeinjection_styles}`}</style> */}
             </Helmet>
             <Layout nav={true}>
-                <div className="container">
+                <div className="container post-cont">
                     <article className="content">
-                        { post.feature_image ?
+                        { post.image.src ?
                             <figure className="post-feature-image">
                                 <img src={ post.image.src } alt={ post.title } />
                             </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
-                            <img src={ post.image.src } alt={ post.title } />
+                            
                             {/* The main post content */ }
                             <section
                                 className="content-body load-external-scripts"
@@ -42,6 +43,15 @@ const Post = ({ data, location }) => {
                             />
                         </section>
                     </article>
+                    <aside >
+                        <h3 className="r-head">Recent Post</h3>
+                        <hr/>
+                        <ul className="post-list">
+                            {Rpost.map((node)=>(
+                                <li><Link href={Url.parse(node.url).path}>{node.title}</Link></li>
+                            ))}
+                        </ul>
+                    </aside>
                 </div>
             </Layout>
         </>
@@ -73,6 +83,12 @@ query($slug:String!){
       excerptHtml
       contentHtml
     }
+    allShopifyArticle(limit: 5, sort: {fields: publishedAt}) {
+        nodes {
+          title
+          url
+        }
+      }
   }  
 `
 

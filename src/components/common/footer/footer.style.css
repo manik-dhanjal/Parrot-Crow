@@ -130,7 +130,7 @@ input.email {
     color: #808080;
     border-radius: 100px;
     max-width: 265px;
-    width:calc(100% - 115px);
+    width:calc(100% - 120px);
     padding:12px 20px 11px 20px;
 }
 .f-subscribe {
@@ -159,11 +159,14 @@ input.email {
 
 #follow {
 display: flex;
-font-size: 25px;
+}
+#follow>li>a{
+    font-size: 25px!important;
 }
 #follow li{
     padding-right: 20px;
     margin-bottom: 0px;
+
 }
 .address-1,.address-2{
     color: white!important;
@@ -215,4 +218,7 @@ font-size: 25px;
         float:right;
         display: inline;
     }
+    #follow li{
+        padding-top: 20px;
+        }
 }

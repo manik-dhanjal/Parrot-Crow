@@ -52,7 +52,7 @@ const footerData={
 followArray:{
     title:"Follow us",
     id:"follow",
-    height:"50px",
+    height:"55px",
     list:[
         {
             item:(<FontAwesomeIcon icon={faTwitter} />),
