@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     list-style-type: none;
-    margin: 0px 30px;
+    margin: 0px;
     padding: 0px;
 }
 .menu>li,.menu-light>li{

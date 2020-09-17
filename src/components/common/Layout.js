@@ -35,7 +35,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
 
             <div className="viewport">
                 <div className="viewport-top">
-                <header className="site-head" style={isHome?{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }:{background:"white"}}>
+                <header className="site-head" style={isHome?{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }:{background:"#F5F5F5 "}}>
                         <div className="container">
                             <nav className="site-nav">
                                 <div className="site-nav-left">
@@ -148,7 +148,7 @@ const DropDown=(props)=>{
 return(
     <>
     
-    <div className="shop-drop" style={props.shop?{top:"120px" ,zIndex:"200"}:{top:"-600px",zIndex:"200"}}>
+    <div className="shop-drop" style={props.shop?{top:"85px" ,zIndex:"200"}:{top:"-600px",zIndex:"200"}}>
                         <div className="container">
                             <div
                                 className=" boy-menu"
