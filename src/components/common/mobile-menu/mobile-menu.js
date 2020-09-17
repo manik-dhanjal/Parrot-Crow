@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faBars,faShoppingBasket,faTimes,faChevronDown} from "@fortawesome/free-solid-svg-icons";
-import "./header.mobile.style.css"
+import { faBars,faTimes,faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import "./mobile-menu.style.css"
 function noScroll() {
     window.scrollTo(0, 0);
   }
-const HeaderMobile=()=>{
+
+const NavSlide=({home})=>{
     const [mobileMenu,setMobileMenu]=useState(false);
     const [menuDropM,setmenuDropM]=useState({girls:false,boys:false});
     useEffect(() => {
@@ -17,23 +18,10 @@ const HeaderMobile=()=>{
     }, [mobileMenu])
     return(
         <>
-         <div className="nav-3 mobile">
-                        <div className="container">
-                            <div className="menu-burger" onClick={()=>setMobileMenu(!mobileMenu)}>
-                                <FontAwesomeIcon icon={faBars} />
-                            </div>
-                            
-                            <ul className="right-icons">
-                                <li><a href="#"><FontAwesomeIcon icon={faUser} /></a></li>
-                                <li><a href="#"><FontAwesomeIcon icon={faShoppingBasket} /></a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div className="h-logo-cont mobile">
-                       <img className="h-logo mobile" src="/images/logo.svg" style={{width:'180px'}}/>
-                    </div>  
-                    <div className="mobile-menu mobile" style={mobileMenu?{left:"0px"}:{left:"-95vw"}}>
+        <div className="menu-burger"  onClick={()=>setMobileMenu(!mobileMenu)}>
+            <FontAwesomeIcon icon={faBars} style={home?{color:"white"}:{color:"#333"}} />
+        </div>  
+        <div className="mobile-menu mobile" style={mobileMenu?{left:"0px"}:{left:"-95vw"}}>
                         <div class="mobile-nav-icon btn-cont">
                                 <button type="button" className="close-button" onClick={()=>setMobileMenu(false)}>
                                     <FontAwesomeIcon icon={faTimes} />
@@ -108,8 +96,7 @@ const HeaderMobile=()=>{
                             
                         </ul>
                     </div>  
-        </>
-
+                    </>
     )
 }
-export default HeaderMobile;
+export default NavSlide;

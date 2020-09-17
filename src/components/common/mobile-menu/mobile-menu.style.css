@@ -1,6 +1,9 @@
 .mobile{
     display: none;
 }
+.menu-burger{
+    display: none;
+}
 @media screen and (max-width:768px){
     .mobile{
         display: block;
@@ -37,7 +40,9 @@
     color: #333;
     font-size: 20px;
     cursor: pointer;
+    display: block;
 }
+
 .h-logo-cont{
     display: flex;
     justify-content: center;
@@ -96,6 +101,7 @@ color:#333;
 .mobile-child-menu{
     float:right;
     cursor: pointer;
+    color:#333;
 }
 .mobile-nav-sub{
     height: 0px;
