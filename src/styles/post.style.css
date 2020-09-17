@@ -1,0 +1,42 @@
+.post-cont{
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+aside{
+padding-left: 20px;
+}
+.post-list{
+    list-style-type: "-";
+}
+.post-list>li{
+    margin: 15px 0px;
+}
+.post-list>li>a{
+    color: #6f6f6f;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.post-list>li>a:hover,.post-list>li>a:active{
+    color: #d9121f;
+}
+.r-head{
+margin:0px;
+}
+aside hr{
+
+        margin-top: 5px;
+        margin-bottom: 20px;
+        width: 30px;
+        border-top: 1px solid #124f89;
+       
+}
+@media screen and (max-width:768px)
+{
+    .post-cont{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    aside{
+        padding-left: 0px;
+    }
+}
