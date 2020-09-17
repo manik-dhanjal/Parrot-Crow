@@ -6,12 +6,14 @@ import "./layout.style.css";
 import { Navigation } from ".";
 import Header from "./header/header";
 import Footer from "./footer/footer"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faChevronDown,faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import "../../styles/app.css";
 
 
 
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
+    
     const site = data.allGhostSettings.edges[0].node;
     console.log(site);
     const twitterUrl = site.twitter
@@ -20,7 +22,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const facebookUrl = site.facebook
         ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}`
         : null;
-        
+
+        const [Shop,setShop] = useState(false);
     return (
         
         <>
@@ -32,7 +35,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <div className="viewport">
                 <div className="viewport-top">
-                <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
+                <header className="site-head" style={isHome?{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }:{background:"white"}}>
                         <div className="container">
                             <nav className="site-nav">
                                 <div className="site-nav-left">
@@ -45,9 +48,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </Link>
                                 </div>
                                 <div className="site-nav-right">
-                                <ul className="menu ">
+                                <ul className={` ${isHome?"menu":"menu-light"}`}>
                                     <li>
-                                    <a href="" >Shop</a>
+                                    <a href="" onClick={()=>setShop(!Shop)}>Shop <FontAwesomeIcon icon={faChevronDown} /></a>
                                     </li>
                                     <li >
                                     {/* <span className="megamenu-label green" >
@@ -90,6 +93,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </nav> */}
                         </div>
                     </header>
+                    <DropDown shop={Shop}/>
                     <main className="site-main">
                         {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
@@ -139,3 +143,82 @@ const DefaultLayoutSettingsQuery = (props) => (
 );
 
 export default DefaultLayoutSettingsQuery;
+const DropDown=(props)=>{
+    console.log(props.shop)
+return(
+    <>
+    
+    <div className="shop-drop" style={props.shop?{top:"120px" ,zIndex:"200"}:{top:"-600px",zIndex:"200"}}>
+                        <div className="container">
+                            <div
+                                className=" boy-menu"
+                                style={{
+                                    background: `url(/images/Boys-Menu.png)`,
+                                }}
+                            >
+                            <div className="menu-cont">
+                                <h2 className="drop-head">Boys</h2>
+                               
+                                    <ul class="boy-list cat-list">
+                                        <li>
+                                            <a href="/collections/boys-t-shirts">
+                                                T- Shirts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/boys-polos">
+                                                Polos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/shorts">
+                                                Shorts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/jeans">
+                                                Jeans
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/jogger">
+                                                Joggers
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div className="cat-hover"> <a href="#" className="boys-button cat-button">Shop Boys <FontAwesomeIcon icon={faAngleDoubleRight} /></a></div>
+                                </div>
+                            </div>
+                            <div
+                                className=" girl-menu"
+                                style={{
+                                    background: `url(/images/girls-menu.png) `,
+                                }}
+                            >
+                                 <div className="menu-cont">
+                                    <h2 className="drop-head">Girls</h2>
+                                    <ul class="girl-list cat-list">
+                                        <li>
+                                            <a href="/collections/girls-t-shirts/retail">
+                                                T-Shirts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/girls-capri/retail">
+                                                Capri
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/collections/shorts-1/retail">
+                                                Shorts
+                                            </a>
+                                        </li>
+                                    </ul>
+                                        <div className="cat-hover"> <a className="girls-button cat-button" href="#">Shop Girls <FontAwesomeIcon icon={faAngleDoubleRight} /></a></div>
+                                    </div >
+                            </div>
+                        </div>
+                    </div>
+    </>
+)
+}
