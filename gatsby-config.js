@@ -113,6 +113,7 @@ module.exports = {
                 ],
             },
         },
+        
         {
             resolve: `gatsby-plugin-advanced-sitemap`,
             options: {
@@ -183,6 +184,15 @@ module.exports = {
                 addUncaughtPages: true,
             },
         },
+        {
+            resolve: `gatsby-source-shopify`,
+            options: {
+              // The domain name of your Shopify shop.
+              shopName: `syed-haroon-ali`,
+              // The storefront access token
+              accessToken: `b289d4b5e707cb60f378a1bc7668f98f`,
+            },
+          },
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,

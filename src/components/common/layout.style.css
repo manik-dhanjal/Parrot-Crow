@@ -1,0 +1,21 @@
+.site-nav-left{
+    width: 150px;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0px 30px;
+    padding: 0px;
+}
+.menu>li{
+    padding-left:27px ;
+}
+ .menu a{
+    color:rgb(196, 195, 195);
+    transition: 0.3s ease color;
+}
+.menu li:hover a{
+ color: white;
+ text-decoration: none;
+}

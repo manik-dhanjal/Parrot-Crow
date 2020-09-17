@@ -1,0 +1,105 @@
+.mobile{
+    display: none;
+}
+@media screen and (max-width:768px){
+    .mobile{
+        display: block;
+    }
+
+.nav-3{
+    height: 50px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.nav-3>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.right-icons{
+    list-style-type:  none;
+    padding:0px;
+    margin: 0px;
+    display: flex;
+}
+.right-icons li{
+    padding-left: 30px;
+}
+.right-icons a{
+    font-size: 20px;
+    color: #333;
+    transition: 0.3s ease;
+}
+.right-icons a:hover{
+    color: #d9121f;
+}
+.menu-burger{
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+.h-logo-cont{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.mobile-menu{
+background: white;
+width: 320px;
+overflow-y: auto;
+height: 100vh;
+position: fixed;
+top: 0px;
+left: -95vw;
+transition: 0.6s ease left;
+}
+.mobile-menu ul{
+
+list-style-type: none;
+}
+.mobile-menu ul a{
+    font-size: 16px;
+    color:#333;
+    font-weight: 600;
+}
+.mobile-menu ul a:hover{
+text-decoration: none;
+color:#333;
+}
+.mobile-menu li{
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0px;
+    margin: 0px;
+}
+.mobile-nav-sub{
+    padding-left:15px !important;
+    margin: 0px;
+}
+.mobile-nav-sub li:last-of-type{
+    border: none;
+    padding-bottom: 0px;
+}
+.mobile-nav-sub li a{
+    font-weight: 400;
+}
+.close-button{
+    color:#333;
+    background: transparent;
+    font-size: 20px;
+    margin: 0px 20px;
+    float: right;
+}
+.btn-cont{
+    margin: 20px 20px;
+    height: 30px;
+}
+.mobile-child-menu{
+    float:right;
+    cursor: pointer;
+}
+.mobile-nav-sub{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.3s ease ;
+}
+}

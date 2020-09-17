@@ -14,7 +14,8 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Index = ({ data, location, pageContext }) => {
-    const posts = data.allGhostPost.edges
+    console.log(data.allShopifyArticle.nodes)
+    const posts = data.allShopifyArticle.nodes
 
     return (
         <>
@@ -22,8 +23,9 @@ const Index = ({ data, location, pageContext }) => {
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
-                        {posts.map(({ node }) => (
+                        {posts.map( node  => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
+                            
                             <PostCard key={node.id} post={node} />
                         ))}
                     </section>
@@ -49,17 +51,21 @@ export default Index
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination
 export const pageQuery = graphql`
-  query GhostPostQuery($limit: Int!, $skip: Int!) {
-    allGhostPost(
-        sort: { order: DESC, fields: [published_at] },
-        limit: $limit,
-        skip: $skip
-    ) {
-      edges {
-        node {
-          ...GhostPostFields
+query MyQuery {
+    allShopifyArticle {
+      nodes {
+        title
+        image {
+          src
         }
+        id
+        contentHtml
+        excerptHtml
+        tags
+        publishedAt
+        url
       }
     }
   }
+    
 `
