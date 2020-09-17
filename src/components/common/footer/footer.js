@@ -244,9 +244,9 @@ export default Footer;
 const FooterDropDown=(props)=>{
     const [Drop,setDrop]=useState(false);
     const [mobile,setMobile]=useState(true);
-     const body=  document.querySelector("body");
+     
     const SizeCheck=()=>{
-        
+        const body=  document.querySelector("body");
         if(body.clientWidth>768&&(mobile||!Drop))
         {
             setMobile(false)
