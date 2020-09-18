@@ -9,21 +9,19 @@ var url1 = require('url');
 const PostCard = ({ post }) => {
     const url = `${url1.parse(post.url).path}/`
     // const url ='/';
-     const readingTime = readingTimeHelper(post)
-    // const readingTime = "2 mins";
-
+    //  const readingTime = readingTimeHelper(post)
+    const readingTime = "2 mins";
+console.log(readingTime)
     return (
         <Link to={url} className="post-card">
             <header className="post-card-header">
-                {post.image.src &&
-                    <div className="post-card-image" style={{
-                        backgroundImage: `url(${post.image.src})` ,
-                    }}></div>}
-                {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={false} /></div>}
+                
+                    <div className="post-card-image" style={post.image?{ backgroundImage: `url(${post.image.src})` }:{ backgroundImage: `url(/images/Boys-Menu.png)` }}></div>
+                {/* {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={false} /></div>} */}
                 {/* {post.featured && <span>Featured</span>} */}
                 <h2 className="post-card-title">{post.title}</h2>
             </header>
-            <section className="post-card-excerpt">{post.excerptHtml}</section>
+            <section className="post-card-excerpt load-external-scripts" dangerouslySetInnerHTML={{ __html: post.excerptHtml }}  />
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
                     {/* <div className="post-card-avatar">
@@ -44,20 +42,20 @@ const PostCard = ({ post }) => {
 
 PostCard.propTypes = {
     post: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         feature_image: PropTypes.string,
         featured: PropTypes.bool,
-        tags: PropTypes.arrayOf(
-            PropTypes.shape({
-                name: PropTypes.string,
-            })
-        ),
-        excerpt: PropTypes.string.isRequired,
-        primary_author: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            profile_image: PropTypes.string,
-        }).isRequired,
+        // tags: PropTypes.arrayOf(
+        //     PropTypes.shape({
+        //         name: PropTypes.string,
+        //     })
+        // ),
+        excerptHtml: PropTypes.string.isRequired,
+        // primary_author: PropTypes.shape({
+        //     name: PropTypes.string.isRequired,
+        //     profile_image: PropTypes.string,
+        // }).isRequired,
     }).isRequired,
 }
 

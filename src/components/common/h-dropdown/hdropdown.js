@@ -17,7 +17,7 @@ const DropDown=(props)=>{
                                 <div className="menu-cont">
                                     <h2 className="drop-head">Boys</h2>
                                    
-                                        <ul class="boy-list cat-list">
+                                        <ul className="boy-list cat-list">
                                             <li>
                                                 <a href="/collections/boys-t-shirts">
                                                     T- Shirts
@@ -55,7 +55,7 @@ const DropDown=(props)=>{
                                 >
                                      <div className="menu-cont">
                                         <h2 className="drop-head">Girls</h2>
-                                        <ul class="girl-list cat-list">
+                                        <ul className="girl-list cat-list">
                                             <li>
                                                 <a href="/collections/girls-t-shirts/retail">
                                                     T-Shirts

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { Link, StaticQuery, graphql } from "gatsby";
@@ -7,7 +7,7 @@ import DropDown from "./h-dropdown/hdropdown";
 import NavSlide from "./mobile-menu/mobile-menu"
 import Footer from "./footer/footer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {faAngleDoubleRight,faBars,faTimes,faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import "../../styles/app.css";
 
 
@@ -15,8 +15,10 @@ import "../../styles/app.css";
 const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
     
     const site = data.allGhostSettings.edges[0].node;
-    const [Shop,setShop] = useState(false);
+
+        const [Shop,setShop] = useState(false);
     return (
+        
         <>
             <Helmet>
                 <html lang={site.lang} />

@@ -35,11 +35,10 @@ const Post = ({ data, location }) => {
                             </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
-                            
                             {/* The main post content */ }
                             <section
                                 className="content-body load-external-scripts"
-                                dangerouslySetInnerHTML={{ __html: post. contentHtml }}
+                                dangerouslySetInnerHTML={{ __html: post.contentHtml }}
                             />
                         </section>
                     </article>
