@@ -1,6 +1,11 @@
 [build]
   command = "NODE_ENV=production gatsby build"
   publish = "public/"
+  base = "blogs"
 
 [template]
   incoming-hooks = ["Ghost"]
+
+  disclaimer: I work for Netlify.
+
+
