@@ -1,7 +1,7 @@
 [build]
   command = "NODE_ENV=production gatsby build --prefix-paths"
-  publish = "public/"
-  base = "blogs"
+  publish = "public"
+
 
 
 
