@@ -1,9 +1,7 @@
 [build]
-  command = "NODE_ENV=production gatsby build"
+  command = "NODE_ENV=production gatsby build --prefix-paths"
   publish = "public/"
   base = "blogs"
 
-[template]
-  incoming-hooks = ["Ghost"]
 
 
