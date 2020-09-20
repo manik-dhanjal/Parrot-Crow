@@ -6,6 +6,4 @@
 [template]
   incoming-hooks = ["Ghost"]
 
-  disclaimer: I work for Netlify.
-
 
