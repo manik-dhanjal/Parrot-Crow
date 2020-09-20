@@ -37,7 +37,7 @@ module.exports = {
     siteMetadata: {
         siteUrl: "https://www.parrotcrow.in",
     },
-    pathPrefix: `/blog`,
+    pathPrefix: `/blogs`,
     assetPrefix:".",
     plugins: [
         /**
