@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF,faInstagram,faTwitter,faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faPlus ,faMinus} from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF,faInstagram,faTwitter,faYoutube,faWhatsapp} from "@fortawesome/free-brands-svg-icons";
+import { faPlus ,faMinus,faPhone} from "@fortawesome/free-solid-svg-icons";
 import "./footer.style.css"
 import data from "./footer.data"
 const screenDetect=()=>{
@@ -231,6 +231,10 @@ c0-0.2,0.2-0.4,0.5-0.4h1.1c0.1,0,0.1,0,0.1-0.1V2.7c0-0.1,0-0.1-0.1-0.1c0,0,0,0-0
                     </form>
                 </div>
             </div>
+            <ul className="contact-float">
+                <li className="whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></li>
+                <li className="whatsapp"><FontAwesomeIcon icon={faPhone} /></li>
+            </ul>
            <div className="f-copyright container">
                  Copyright © 2020, ParrotCrow. All Rights Reserved.
            </div>

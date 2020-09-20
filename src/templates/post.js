@@ -29,7 +29,7 @@ const Post = ({ data, location }) => {
             <Layout nav={true}>
                 <div className="container post-cont">
                     <article className="content">
-                        { post.image.src ?
+                        { post.image ?
                             <figure className="post-feature-image">
                                 <img src={ post.image.src } alt={ post.title } />
                             </figure> : null }
