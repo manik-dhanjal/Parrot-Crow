@@ -193,6 +193,7 @@ module.exports = {
               accessToken: `b289d4b5e707cb60f378a1bc7668f98f`,
             },
           },
+          
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,

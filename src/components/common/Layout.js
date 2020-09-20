@@ -34,7 +34,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
                                 <div className="site-nav-left">
                                     <Link to="/">
                                        
-                                         <img src="/images/logo.svg" alt={site.title} />
+                                         <img src="/images/logo.png" alt="Parrot Crow" />
                                     </Link>
                                 </div>
                                 <div className="site-nav-right">
