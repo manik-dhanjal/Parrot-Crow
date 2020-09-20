@@ -232,8 +232,8 @@ c0-0.2,0.2-0.4,0.5-0.4h1.1c0.1,0,0.1,0,0.1-0.1V2.7c0-0.1,0-0.1-0.1-0.1c0,0,0,0-0
                 </div>
             </div>
             <ul className="contact-float">
-                <li className="whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></li>
-                <li className="whatsapp"><FontAwesomeIcon icon={faPhone} /></li>
+                <li ><a href="https://web.whatsapp.com/send?phone=919345393943&text=https://www.parrotcrow.in/%0A%0A"><FontAwesomeIcon icon={faWhatsapp} /></a></li>
+                <li ><a href="tel:+919345393943"><FontAwesomeIcon icon={faPhone} /></a></li>
             </ul>
            <div className="f-copyright container">
                  Copyright © 2020, ParrotCrow. All Rights Reserved.
