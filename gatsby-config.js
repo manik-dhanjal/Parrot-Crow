@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === `production` && config.siteUrl === `http://localhos
 */
 module.exports = {
     siteMetadata: {
-        siteUrl: "www.parrotcrow.in",
+        siteUrl: "https://www.parrotcrow.in",
     },
     pathPrefix: `/blog`,
     assetPrefix:".",
