@@ -38,7 +38,7 @@ module.exports = {
         siteUrl: "https://www.parrotcrow.in",
     },
     pathPrefix: `/blogs`,
-    assetPrefix:".",
+    assetPrefix:"/blogs",
     plugins: [
         /**
          *  Content Plugins
