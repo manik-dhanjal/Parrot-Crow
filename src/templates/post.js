@@ -4,7 +4,7 @@ import { graphql,Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import "../styles/post.style.css"
 import { Layout } from '../components/common'
-import { MetaData } from '../components/common/meta'
+
 import Url from "url"
 /**
 * Single post view (/:slug)
@@ -18,11 +18,6 @@ const Post = ({ data, location }) => {
     console.log(Rpost)
     return (
         <>
-            <MetaData
-                data={data}
-                location={location}
-                type="article"
-            />
             <Helmet>
                 {/* <style type="text/css">{`${post.codeinjection_styles}`}</style> */}
             </Helmet>

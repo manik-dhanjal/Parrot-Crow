@@ -12,23 +12,22 @@ import "../../styles/app.css";
 
 
 
-const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
-    
-    const site = data.allGhostSettings.edges[0].node;
+const DefaultLayout = ({  children, bodyClass, isHome,nav }) => {
+
 
         const [Shop,setShop] = useState(false);
     return (
         
         <>
             <Helmet>
-                <html lang={site.lang} />
-                <style type="text/css">{`${site.codeinjection_styles}`}</style>
+                <html lang="en" />
+                {/* <style type="text/css">{`${site.codeinjection_styles}`}</style> */}
                 <body className={bodyClass} />
             </Helmet>
 
             <div className="viewport">
                 <div className="viewport-top">
-                <header className="site-head" style={isHome?{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }:{background:"#F5F5F5 "}}>
+                <header className="site-head" style={isHome?{background:"#333"}:{background:"#F5F5F5 "}}>
                         <div className="container">
                             <nav className="site-nav">
                                 <div className="site-nav-left">
@@ -62,8 +61,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
                             </nav>
                             { isHome ?
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.description}</p>
+                                    <h1 className="site-banner-title">Parrot Crow</h1>
+                                    <p className="site-banner-desc">5 problems 1 Solution React</p>
                                 </div> :
                                 null}
                         </div>
@@ -82,39 +81,39 @@ const DefaultLayout = ({ data, children, bodyClass, isHome,nav }) => {
     );
 };
 
-DefaultLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-    bodyClass: PropTypes.string,
-    isHome: PropTypes.bool,
-    data: PropTypes.shape({
-        file: PropTypes.object,
-        allGhostSettings: PropTypes.object.isRequired,
-    }).isRequired,
-};
+// DefaultLayout.propTypes = {
+//     children: PropTypes.node.isRequired,
+//     bodyClass: PropTypes.string,
+//     isHome: PropTypes.bool,
+//     data: PropTypes.shape({
+//         file: PropTypes.object,
+//         allGhostSettings: PropTypes.object.isRequired,
+//     }).isRequired,
+// };
 
-const DefaultLayoutSettingsQuery = (props) => (
-    <StaticQuery
-        query={graphql`
-            query GhostSettings {
-                allGhostSettings {
-                    edges {
-                        node {
-                            ...GhostSettingsFields
-                        }
-                    }
-                }
-                file(relativePath: { eq: "ghost-icon.png" }) {
-                    childImageSharp {
-                        fixed(width: 30, height: 30) {
-                            ...GatsbyImageSharpFixed
-                        }
-                    }
-                }
-            }
-        `}
-        render={(data) => <DefaultLayout data={data} {...props} />}
-    />
-);
+// const DefaultLayoutSettingsQuery = (props) => (
+//     <StaticQuery
+//         // query={graphql`
+//         //     query GhostSettings {
+//         //         allGhostSettings {
+//         //             edges {
+//         //                 node {
+//         //                     ...GhostSettingsFields
+//         //                 }
+//         //             }
+//         //         }
+//         //         file(relativePath: { eq: "ghost-icon.png" }) {
+//         //             childImageSharp {
+//         //                 fixed(width: 30, height: 30) {
+//         //                     ...GatsbyImageSharpFixed
+//         //                 }
+//         //             }
+//         //         }
+//         //     }
+//         // `}
+//         render={(data) => <DefaultLayout data={data} {...props} />}
+//     />
+// );
 
-export default DefaultLayoutSettingsQuery;
+export default DefaultLayout;
 
