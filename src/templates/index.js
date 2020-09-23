@@ -61,7 +61,6 @@ query MyQuery {
         id
         contentHtml
         excerptHtml
-        tags
         publishedAt
         url
       }

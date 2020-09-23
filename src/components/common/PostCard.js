@@ -16,7 +16,7 @@ console.log(readingTime)
         <Link to={url} className="post-card">
             <header className="post-card-header">
                 
-                    <div className="post-card-image" style={post.image?{ backgroundImage: `url(${post.image.src})` }:{ backgroundImage: `url(/images/Boys-Menu.png)` }}></div>
+                    <div className="post-card-image" style={post.image?{ backgroundImage: `url(${post.image.src})` }:{ backgroundImage: `url(/images/logo.png)` ,backgroundSize:"contain"}}></div>
                 {/* {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={false} /></div>} */}
                 {/* {post.featured && <span>Featured</span>} */}
                 <h2 className="post-card-title">{post.title}</h2>
@@ -44,7 +44,7 @@ PostCard.propTypes = {
     post: PropTypes.shape({
         url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        feature_image: PropTypes.string,
+        images: PropTypes.string,
         featured: PropTypes.bool,
         // tags: PropTypes.arrayOf(
         //     PropTypes.shape({

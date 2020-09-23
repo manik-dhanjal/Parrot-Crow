@@ -190,9 +190,9 @@ module.exports = {
             resolve: `gatsby-source-shopify`,
             options: {
               // The domain name of your Shopify shop.
-              shopName: `syed-haroon-ali`,
+              shopName: `parrotcrow`,
               // The storefront access token
-              accessToken: `b289d4b5e707cb60f378a1bc7668f98f`,
+              accessToken: `43c0b651ecc454996a57a98f100cca7d`,
             },
           },
           
