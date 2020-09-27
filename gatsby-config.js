@@ -16,7 +16,7 @@ module.exports = {
         siteUrl: "https://www.parrotcrow.in",
     },
     pathPrefix: `/blogs`,
-    assetPrefix:".",
+    assetPrefix:"https://parrotcrow.netlify.app/",
     plugins: [
         /**
          *  Content Plugins
