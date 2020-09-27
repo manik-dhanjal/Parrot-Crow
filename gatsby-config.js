@@ -15,7 +15,7 @@ module.exports = {
     siteMetadata: {
         siteUrl: "https://www.parrotcrow.in",
     },
-    pathPrefix: ``,
+    // pathPrefix: ``,
     assetPrefix:"https://parrotcrow.netlify.app/",
     plugins: [
         /**
