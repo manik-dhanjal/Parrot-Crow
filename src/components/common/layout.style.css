@@ -11,6 +11,11 @@
 .menu>li,.menu-light>li{
     padding-left:27px ;
 }
+.navbar{
+
+    padding-top:15px!important;
+    padding-bottom:15px!important;
+}
  .menu a{
     color:rgb(196, 195, 195);
     transition: 0.3s ease color;

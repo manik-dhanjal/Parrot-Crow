@@ -9,6 +9,7 @@ import Footer from "./footer/footer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight,faBars,faTimes,faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import "../../styles/app.css";
+import { repeat } from "lodash";
 
 
 
@@ -27,44 +28,50 @@ const DefaultLayout = ({  children, bodyClass, isHome,nav }) => {
 
             <div className="viewport">
                 <div className="viewport-top">
-                <header className="site-head" style={isHome?{background:"#333"}:{background:"#F5F5F5 "}}>
-                        <div className="container">
-                            <nav className="site-nav">
-                                <div className="site-nav-left">
-                                    <Link to="/">
-                                       
-                                         <img src="/images/logo.png" alt="Parrot Crow" />
-                                    </Link>
-                                </div>
-                                <div className="site-nav-right">
-                                 <NavSlide home={isHome}/>
-                                <ul className={` ${isHome?"menu":"menu-light"}`}>
-                                    <li>
-                                    <a onClick={()=>setShop(!Shop)}>Shop <FontAwesomeIcon icon={faChevronDown} /></a>
-                                    </li>
-                                    <li >
-                                   
-                                        <a href="https://www.parrotcrow.in/pages/wholesale-kids-wear-manufacturer-tirupur">Wholesale</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.parrotcrow.in/pages/contact-us">Contact</a>
-                                    </li>
-                                    <li >
-                                       
-                                        <a href="https://www.parrotcrow.in/collections/clearance-kids-wear" >Clearance</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.parrotcrow.in/pages/cloth-masks-wholesale" >Mask</a>
-                                    </li>
-                                </ul>
-                                </div>
-                            </nav>
+                 <header>   
+                     <div className="container navbar">
+                                <nav className="site-nav">
+                                    <div className="site-nav-left">
+                                        <Link to="/">
+                                        
+                                            <img src="/images/logo.png" alt="Parrot Crow" />
+                                        </Link>
+                                    </div>
+                                    <div className="site-nav-right">
+                                    <NavSlide home={false}/>
+                                    <ul className={` menu-light`}>
+                                        <li>
+                                        <a onClick={()=>setShop(!Shop)}>Shop <FontAwesomeIcon icon={faChevronDown} /></a>
+                                        </li>
+                                        <li >
+                                    
+                                            <a href="https://www.parrotcrow.in/pages/wholesale-kids-wear-manufacturer-tirupur">Wholesale</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.parrotcrow.in/pages/contact-us">Contact</a>
+                                        </li>
+                                        <li >
+                                        
+                                            <a href="https://www.parrotcrow.in/collections/clearance-kids-wear" >Clearance</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.parrotcrow.in/pages/cloth-masks-wholesale" >Mask</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </nav>
+                                
+                        </div>
+                        <div className="site-head" style={isHome?{background:"linear-gradient(#00000070,#00000070) , url(/images/banner.jpg)",backgroundSize:"cover",backgroundPosition:"center 80%",backgroundRepeat:"no-repeat"}:{display:"none"}}>
+                           
+                            <div className="container">
                             { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">Parrot Crow</h1>
-                                    <p className="site-banner-desc">5 problems 1 Solution React</p>
-                                </div> :
-                                null}
+                                    <div className="site-banner">
+                                        <h1 className="site-banner-title">Parrot Crow</h1>
+                                        <p className="site-banner-desc">Fly away with your Style</p>
+                                    </div> :
+                                    null}
+                            </div>        
                         </div>
                     </header>
                     <DropDown shop={Shop}/>
